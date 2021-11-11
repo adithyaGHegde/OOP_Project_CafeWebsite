@@ -20,7 +20,9 @@ urlpatterns = [
     path('registration/', views.CustomerRegistrationView.
     as_view(), name="customerregistration"),
     path('passwordchange/', auth_views.PasswordChangeView.as_view(template_name='app/passwordchange.html',
-    form_class=MyPasswordChangeForm),name='passwordchange'),
+    form_class=MyPasswordChangeForm, success_url='/passwordchangedone/'),name='passwordchange'),
+    path('passwordchangedone/', auth_views.PasswordChangeView.as_view(template_name='app/passwordchangedone.html'),
+    name='passwordchangedone'),
     path('logout/', auth_views.LogoutView.as_view(next_page='login'),name='logout'),
     path('checkout/', views.checkout, name='checkout'),
     path('asiandishes/', views.asiandishes, name='asiandishes'),
