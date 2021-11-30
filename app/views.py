@@ -12,9 +12,6 @@ class ProductView(View):
         BRUNCH = Product.objects.filter(category='B')
         return render(request, 'app/home.html', {'COFFEE':COFFEE, 'TEA':TEA, 'SNACKS':SNACKS, 'BRUNCH':BRUNCH})
 
-#def product_detail(request):
- #return render(request, 'app/productdetail.html')
-
 class ProductDetailView(View):
      def get(self, request, pk):
          product = Product.objects.get(pk=pk)
