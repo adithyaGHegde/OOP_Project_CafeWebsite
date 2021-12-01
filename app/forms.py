@@ -1,9 +1,9 @@
 from django import forms
-<<<<<<< HEAD
+
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm, PasswordChangeForm, UsernameField, PasswordResetForm, SetPasswordForm
-=======
+
 from django.contrib.auth.forms import UserCreationForm,AuthenticationForm, UsernameField, PasswordChangeForm, PasswordResetForm, SetPasswordForm
->>>>>>> 1a9375d619fb54aecb79b920478b62172cb329a0
+
 from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 from .models import Customer
@@ -24,7 +24,7 @@ class LoginForm(AuthenticationForm):
  password = forms.CharField(label=_("Password"), strip=False, widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'class':'form-control'}))
 
 class MyPasswordChangeForm(PasswordChangeForm):
-<<<<<<< HEAD
+
  old_password = forms.CharField(label=_("Old Password"), strip=False, widget=forms.PasswordInput(attrs={'autocomplete': 'current-password', 'autofocus':True,  'class':'form-control'}))
  new_password1 = forms.CharField(label=_("New Password"), strip=False, widget=forms.PasswordInput(attrs={'autocomplete': 'new-password', 'class':'form-control'}), help_text=password_validation.password_validators_help_text_html())
  new_password2 = forms.CharField(label=_("Confirm New Password"), strip=False, widget=forms.PasswordInput(attrs={'autocomplete': 'new-password','class':'form-control'}))
@@ -43,7 +43,7 @@ class CustomerProfileForm(forms.ModelForm):
     widgets = {'name':forms.TextInput(attrs={'class':'form-control'}),'locality':forms.TextInput(attrs={'class':'form-control'}), 'city':forms.TextInput(attrs={'class':'form-control'}), 
     'state':forms.Select(attrs={'class':'form-control'}),
     'zipcode':forms.NumberInput(attrs={'class':'form-control'})}
-=======
+
     oldpasssword = forms.CharField(label=_("Old Password"),
     strip=False, widget=forms.PasswordInput(attrs=
     {'autocomplete': 'current-password', 'autofocus':True,
@@ -75,4 +75,4 @@ class MySetPasswordForm(SetPasswordForm):
         strip=False,
         widget=forms.PasswordInput(attrs={'placeholder': 'Repeat Password', 'class': 'form-control'}),
     )
->>>>>>> 1a9375d619fb54aecb79b920478b62172cb329a0
+
