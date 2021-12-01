@@ -9,6 +9,7 @@ from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 class ProductView(View):
+<<<<<<< HEAD
 	def get(self, request):
 		totalitem = 0
 		TEA = Product.objects.filter(category='T')
@@ -18,6 +19,14 @@ class ProductView(View):
 		if request.user.is_authenticated:
 			totalitem = len(Cart.objects.filter(user=request.user))
 		return render(request, 'app/home.html', {'TEA':TEA, 'COFFEE':COFFEE,'SNACKS':SNACKS, 'BRUNCH':BRUNCH, 'totalitem':totalitem})
+=======
+    def get(self, request):
+        COFFEE = Product.objects.filter(category='C')
+        TEA = Product.objects.filter(category='T')
+        SNACKS = Product.objects.filter(category='S')
+        BRUNCH = Product.objects.filter(category='B')
+        return render(request, 'app/home.html', {'COFFEE':COFFEE, 'TEA':TEA, 'SNACKS':SNACKS, 'BRUNCH':BRUNCH})
+>>>>>>> 1a9375d619fb54aecb79b920478b62172cb329a0
 
 class ProductDetailView(View):
 	def get(self, request, pk):

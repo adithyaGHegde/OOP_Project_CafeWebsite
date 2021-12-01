@@ -110,5 +110,6 @@ STATIC_URL = '/static/images/'
 MEDIA_URL = '/media/'
 NEDIA_ROOT = BASE_DIR / 'media'
 LOGIN_REDIRECT_URL = '/profile/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 SESSION_ENGINE = "django.contrib.sessions.backends.db"
