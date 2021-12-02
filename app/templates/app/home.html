@@ -34,7 +34,7 @@
 {% block main-content %}
 <!-- 1st Product Slider -->
 <div class="m-3">
-  <h2>BRUNCH</h2>
+  <h1>𝓑𝓡𝓤𝓝𝓒𝓗</h1>
   <!-- Slider 1 -->
   <div class="owl-carousel" id="slider1">
   {% for B in BRUNCH %}
@@ -44,44 +44,9 @@
  </div>
  <!-- End 1st Product Slider -->
 
-<!-- Payment Info Section -->
-<div class="container my-5">
- <div class="row">
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
- </div>
-</div>
-<!-- End Payment Info Section -->
-
 <!-- 2nd Product Slider -->
 <div class="mx-3">
-  <h2>TEA</h2>
+  <h1>𝓣𝓔𝓐</h1>
   <!-- Slider 2 -->
    <div class="owl-carousel" id="slider2">
   {% for T in TEA %}
@@ -94,7 +59,7 @@
 
 <!-- 3rd Product Slider -->
 <div class="mx-3">
-  <h2>COFFEE</h2>
+  <h1>𝓒𝓞𝓕𝓕𝓔𝓔</h1>
   <!-- Slider 4 -->
    <div class="owl-carousel" id="slider3">
   {% for C in COFFEE %}
@@ -108,7 +73,7 @@
 
  <!-- 4th Product Slider -->
 <div class="mx-3">
-  <h2>SNACKS</h2>
+  <h1>𝓢𝓝𝓐𝓒𝓚𝓢</h1>
 
 
   <!-- Slider 4 -->
@@ -121,6 +86,42 @@
   </div>
  </div>
  <!-- End 4th Product Slider -->
+
+ 
+<!-- Payment Info Section -->
+<div class="container my-5">
+  <div class="row">
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+      <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- End Payment Info Section -->
 
  
 {% endblock main-content %}
