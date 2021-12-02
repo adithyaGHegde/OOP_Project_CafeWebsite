@@ -31,46 +31,10 @@
 <!-- End Banner Slider -->
 {% endblock banner_slider %}
 
-
 {% block main-content %}
-<!-- Payment Info Section -->
-<div class="container my-5">
- <div class="row">
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-     <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
-  <div class="col-sm-3">
-   <div class="card mb-3">
-     <div class="card-body">
-      <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
-     </div>
-   </div>
-  </div>
- </div>
-</div>
-<!-- End Payment Info Section -->
-
 <!-- 1st Product Slider -->
 <div class="m-3">
-  <h2>BRUNCH</h2>
+  <h1>𝓑𝓡𝓤𝓝𝓒𝓗</h1>
   <!-- Slider 1 -->
   <div class="owl-carousel" id="slider1">
   {% for B in BRUNCH %}
@@ -79,49 +43,86 @@
   </div>
  </div>
  <!-- End 1st Product Slider -->
- 
 
 <!-- 2nd Product Slider -->
 <div class="mx-3">
- <h2>TEA</h2>
- <!-- Slider 2 -->
-  <div class="owl-carousel" id="slider2">
- {% for T in TEA %}
-  <a href="{% url 'product-detail' T.id %}" class="btn"><div class="item"><img src="{{T.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{T.title}}</span><br><span class="fs-5">{{T.discounted_price}} </span></div></a>
-  {% endfor %}
+  <h1>𝓣𝓔𝓐</h1>
+  <!-- Slider 2 -->
+   <div class="owl-carousel" id="slider2">
+  {% for T in TEA %}
+   <a href="{% url 'product-detail' T.id %}" class="btn"><div class="item"><img src="{{T.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{T.title}}</span><br><span class="fs-5">{{T.discounted_price}} </span></div></a>
+   {% endfor %}
+  </div>
  </div>
-</div>
-
-<!-- End 2nd Product Slider -->
-
+ 
+ <!-- End 2nd Product Slider -->
 
 <!-- 3rd Product Slider -->
 <div class="mx-3">
- <h2>COFFEE</h2>
- <!-- Slider 4 -->
-  <div class="owl-carousel" id="slider3">
- {% for C in COFFEE %}
-  <a href="{% url 'product-detail' C.id %}" class="btn"><div class="item"><img src="{{C.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{C.title}}</span><br><span class="fs-5">{{C.discounted_price}}</span></div></a>
-  {% endfor %}
+  <h1>𝓒𝓞𝓕𝓕𝓔𝓔</h1>
+  <!-- Slider 4 -->
+   <div class="owl-carousel" id="slider3">
+  {% for C in COFFEE %}
+   <a href="{% url 'product-detail' C.id %}" class="btn"><div class="item"><img src="{{C.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{C.title}}</span><br><span class="fs-5">{{C.discounted_price}}</span></div></a>
+   {% endfor %}
+  </div>
  </div>
-</div>
+  </div>
  </div>
-</div>
-<!-- End 3rd Product Slider -->
+ <!-- End 3rd Product Slider -->
 
-
-<!-- 4th Product Slider -->
+ <!-- 4th Product Slider -->
 <div class="mx-3">
- <h2>SNACKS</h2>
- <!-- Slider 4 -->
-  <div class="owl-carousel" id="slider4">
- {% for S in SNACKS %}
-  <a href="{% url 'product-detail' S.id %}" class="btn"><div class="item"><img src="{{S.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{S.title}}</span><br><span class="fs-5">{{S.discounted_price}}</span></div></a>
-  {% endfor %}
+  <h1>𝓢𝓝𝓐𝓒𝓚𝓢</h1>
+
+
+  <!-- Slider 4 -->
+   <div class="owl-carousel" id="slider4">
+  {% for S in SNACKS %}
+   <a href="{% url 'product-detail' S.id %}" class="btn"><div class="item"><img src="{{S.product_image.url}}" alt="" height="200px"><span class="fw-bold">{{S.title}}</span><br><span class="fs-5">{{S.discounted_price}}</span></div></a>
+   {% endfor %}
+  </div>
  </div>
-</div>
+  </div>
  </div>
-</div>
-<!-- End 4th Product Slider -->
+ <!-- End 4th Product Slider -->
+
+ 
+<!-- Payment Info Section -->
+<div class="container my-5">
+  <div class="row">
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+      <img src="{% static 'app/images/payavail/cc.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/upi.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/nb.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+   <div class="col-sm-3">
+    <div class="card mb-3">
+      <div class="card-body">
+       <img src="{% static 'app/images/payavail/bj.jpg' %}" alt="" srcset="" class="img-fluid">
+      </div>
+    </div>
+   </div>
+  </div>
+ </div>
+ <!-- End Payment Info Section -->
+
+ 
 {% endblock main-content %}
 

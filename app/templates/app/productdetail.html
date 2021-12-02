@@ -1,6 +1,6 @@
 {% extends 'app/base.html' %}
 {% load static %}
-{% block title %}FOOD ITEM{% endblock title %}
+{% block title %}Product Detail{% endblock title %}
 {% block main-content %}
 <div class="container my-5">
  <div class="row">
@@ -8,18 +8,38 @@
    <img src="{{product.product_image.url}}" alt="" class="img-fluid img-thumbnail">
   </div>
   <div class="col-sm-5 offset-sm-1">
-   <h2>FOOD ITEM: {{product.title}}</h2>
+   <h2>{{product.title}}</h2>
    <hr>
    <p>{{product.description}}</p> <br>
-   <h4>RS. {{product.discounted_price}}<small class="fw-light text-decoration-line-through">RS. {{product.selling_price}}</small></h4> <br>
-   <a href="{% url 'add-to-cart' %}" class="btn btn-primary shadow px-5 py-2">Add to Cart</a>
-   <a href="{% url 'buy-now' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
+   <h4>Rs. {{product.discounted_price}} <small class="fw-light text-decoration-line-through">{{product.selling_price}}</small></h4> <br>
+
+   {% if user.is_authenticated  %}
+    {% if item_already_in_cart  %}
+     <a href="{% url 'showcart' %}" class="btn btn-warning shadow px-5 py-2 ms-4">Go to Cart</a>
+    {% else %}
+     <form action="/add-to-cart" class="d-inline">
+      <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+      <button type="submit" class="btn btn-primary shadow px-5 py-2">Add to Cart</button>
+     </form>
+    {% endif %}
+   {% endif %}
+
+   {% if not request.user.is_authenticated %}
+     <form action="/add-to-cart" class="d-inline">
+      <input type="hidden" name="prod_id" value="{{product.id}}" id="prod_id">
+      <button type="submit" class="btn btn-primary shadow px-5 py-2">Add to Cart</button>
+     </form>
+   {% endif %}
+
+
+
+   <a href="{% url 'checkout' %}" class="btn btn-danger shadow px-5 py-2 ms-4">Buy Now</a>
    <h5 class="mt-5">Available Offers</h5>
    <ul>
-    <li>XYZ OFFERS**</li>
-    <li>XYZ OFFERS**</li>
-    <li>XYZ OFFERS**</li>
-    <li>XYZ</li>
+    <li>Use code "ILOVECAFE" to get instant 40% discount off on orders above Rs 149. Maximum disscount off Rs 120 </li>
+    <li>Special Price Get extra ₹30 off (price inclusive of discount)</li>
+    <li>Get 40 % disscount using APAY. Maximum disscount of Rs 40</li>
+    <li>Partner Offer ₹2000 worth CAFE GOLDEN MEMBERSHIP card on Every 100th Transaction with a new Visa Debit/Credit Card</li>
    </ul>
   </div>
  </div>

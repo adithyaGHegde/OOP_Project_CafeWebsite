@@ -22,7 +22,7 @@
     <title>CAFE | {% block title %} {% endblock title %} </title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-warning">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
      <div class="container">
        <a class="navbar-brand" href="/">CAFE</a>
        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -34,24 +34,18 @@
              <a class="nav-link active" aria-current="page" href="/">Home</a>
            </li>
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white" href="#" id="electronicsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-               Food
+             <a class="nav-link dropdown-toggle text-white" href="#" id="dishesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+               Dishes
              </a>
-             <ul class="dropdown-menu" aria-labelledby="FoodDropdown">
-             <li><a class="dropdown-item" href="{% url 'asiandishes' %}">Asian dishes</a></li>
-             <li><a class="dropdown-item" href="#">European dishes</a></li>
-             <li><a class="dropdown-item" href="#">French dishes</a></li>
-             <li><a class="dropdown-item" href="#">Spain dishes</a></li>
-             <li><a class="dropdown-item" href="#">Italian dishes</a></li>
-             <li><a class="dropdown-item" href="#">Japanese dishes</a></li>
-             <li><a class="dropdown-item" href="#">Chinese dishes</a></li>
+             <ul class="dropdown-menu" aria-labelledby="dishesDropdown">
+               <li><a class="dropdown-item" href="#">CHINEASE</a></li>
              </ul>
            </li>
            <li class="nav-item dropdown">
-             <a class="nav-link dropdown-toggle text-white" href="#" id="fashionDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+             <a class="nav-link dropdown-toggle text-white" href="#" id="drinksDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                Drinks
              </a>
-             <ul class="dropdown-menu" aria-labelledby="fashionDropdown">
+             <ul class="dropdown-menu" aria-labelledby="drinksDropdown">
                <li><a class="dropdown-item" href="#">Soft Drinks</a></li>
                <li><a class="dropdown-item" href="#">Hot Drinks</a></li>
              </ul>
@@ -59,14 +53,14 @@
          </ul>
          <form class="d-flex">
            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-           <button class="btn btn-warning" type="submit">Y</button>
+           <button class="btn btn-warning" type="submit">-</button>
          </form>
          <div>
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           {% if request.user.is_authenticated %}
            <li class="nav-item dropdown mx-2">
               <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Your acc.
+                {{request.user.username|capfirst}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
                 <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
@@ -76,7 +70,7 @@
               </ul>
             </li>
             <li class="nav-item mx-2">
-             <a href="{% url 'add-to-cart' %}" class="nav-link text-white"><span class="badge bg-success">4</span> Cart </a>
+              <a href="{% url 'showcart' %}" class="nav-link text-white"><span class="badge bg-warning">{{totalitem}}</span> Cart </a>
             </li>
             {% else %}
             <li class="nav-item mx-2">
@@ -95,9 +89,11 @@
     {% block livesale %} {% endblock livesale %}
     {% block main-content %} {% endblock main-content %}
 
+    {% block payment-gateway %} {% endblock payment-gateway %}
+
     <!-- Start Footer -->
-    <footer class="container-fluid bg-success text-center p-2 mt-5">
-        <small class="text-white">CAFE PROJECT OOPS </small>
+    <footer class="container-fluid bg-dark text-center p-2 mt-5">
+        <small class="text-white">Copyright &copy; 2021 || Designed By OOPS GROUP-2 || </small>
         <img src="{% static 'app/images/payment.png' %}" alt="" srcset="" class="img-fluid" height="2px">
     </footer> <!-- End Footer -->
 
