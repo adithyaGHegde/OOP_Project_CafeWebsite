@@ -20,9 +20,9 @@
       {{fm.label_tag}} {{fm}} <small class="text-danger">{{fm.errors|striptags}}</small>
       </div>
      {% endfor %}
-     <input type="submit" value="Submit" class="btn btn-primary">
+     <input type="submit" value="Submit" class="btn btn-warning">
      <br>
-     <div class="text-center text-primary fw-bold"><small>Existing User ? <a href="{% url 'login' %}" class="text-danger">Login Now</a> </small></div>
+     <div class="text-center text-success fw-bold"><small>Existing User ? <a href="{% url 'login' %}" class="text-danger">Login Now</a> </small></div>
      {% if form.non_field_errors %}
       {% for error in form.non_field_errors %}
        <p class="alert alert-danger my-3">{{error}}</p>
