@@ -63,10 +63,10 @@
                 {{request.user.username|capfirst}}
               </a>
               <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-                <li><a class="dropdown-item" href="{% url 'profile' %}"></a>𝒫𝓇𝑜𝒻𝒾𝓁𝑒</li>
-                <li><a class="dropdown-item" href="{% url 'orders' %}"></a>𝒪𝓇𝒹𝑒𝓇</li>
-                <li><a class="dropdown-item" href="{% url 'passwordchange' %}"></a>𝒞𝒽𝒶𝓃𝑔𝑒 𝓅𝒶𝓈𝓈𝓌𝑜𝓇𝒹</li>
-                <li><a class="dropdown-item" href="{% url 'logout' %}"></a>𝐿𝑜𝑔𝑜𝓊𝓉</li>
+                <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
+                <li><a class="dropdown-item" href="{% url 'orders' %}">Orders</a></li>
+                <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
+                <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
               </ul>
             </li>
             <li class="nav-item mx-2">
