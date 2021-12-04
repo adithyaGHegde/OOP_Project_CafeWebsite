@@ -18,6 +18,7 @@ urlpatterns = [
     path('address/', views.address, name='address'),
     path('orders/', views.orders, name='orders'),
     path('paymentdone/', views.payment_done, name='paymentdone'),
+    path('italian/', views.italian, name='italian'),
 
     path('accounts/login/', auth_views.LoginView.as_view(template_name='app/login.html', authentication_form=LoginForm), name='login'),
     # path('profile/', views.profile, name='profile'),
