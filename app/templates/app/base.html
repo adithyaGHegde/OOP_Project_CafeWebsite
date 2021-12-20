@@ -17,7 +17,8 @@
 
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'app/css/style.css' %}">
-
+    
+    
 
     <title>CAFE | {% block title %} {% endblock title %} </title>
   </head>
@@ -38,7 +39,7 @@
               𝒟𝒾𝓈𝒽𝑒𝓈
              </a>
              <ul class="dropdown-menu" aria-labelledby="dishesDropdown">
-               <li><a class="dropdown-item" href="#">Chinease</a></li>
+              <li><a class="dropdown-item" href="{% url 'italian' %}">italian</a></li>
              </ul>
            </li>
            <li class="nav-item dropdown">

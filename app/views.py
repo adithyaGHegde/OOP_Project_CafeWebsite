@@ -227,3 +227,7 @@ class ProfileView(View):
 			reg.save()
 			messages.success(request, 'Congratulations!! Profile Updated Successfully.')
 		return render(request, 'app/profile.html', {'form':form, 'active':'btn-primary', 'totalitem':totalitem})
+
+def italian(request, data=None):
+	totalitem = 0
+	return render(request, 'app/italian.html', {'italian':italian, 'totalitem':totalitem})
